@@ -7,14 +7,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
 
     <title>Rest Countries API</title>
 
 </head>
 <body>
-    
+    <div class="container">
+
+        <nav class="box-styles">
+            <h4 class="where-in-the-world">Where in the World?</h4>
+            <h6 class="dark-light-mode">Dark Mode</h6>
+        </nav>
+
+        <main>
+            <div class="search-filter-container">
+
+                <div class="search-box box-styles">
+                    <input type="text" value="Search for  country..." name="search-box" id="search-box">
+                </div>
+
+                <div class="filter-by-region">
+                    <div class="filter-btn box-styles" id="filter-btn">Filter by Region</div>
+                    <ul class="continent-list box-styles" id="continent-list">
+                        <li>Africa</li>
+                        <li>America</li>
+                        <li>Asia</li>
+                        <li>Europe</li>
+                        <li>Oceania</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="flag-container" id="flag-container">
+
+            </div>
+            
+        </main>
+
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

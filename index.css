@@ -7,9 +7,108 @@
     --white: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements) */
   }
 
+  /* //helper class */
+
+  .box-styles {
+    box-shadow: 0 2px 4px 0 rgba(179, 178, 178, 0.2), 0 3px 10px 0 rgba(179, 178, 178, 0.2);
+    border-radius: 5px;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--veryLightGrey);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--veryDarkBlueTxt);
+    padding: 0 10px;
+    background-color: var(--white);
+    
+}
+
+nav .dark-light-mode {
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+nav .where-in-the-world {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+main {
+    margin: 0  10px;
+}
+
+.search-box {
+    margin-top: 20px;
+    padding: 25px 20px;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.search-box > input {
+    border-style: none;
+    cursor: pointer;
+}
+
+.filter-by-region {
+    margin-top: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    max-width: 50%;
+    position: relative;
+}
+
+.filter-btn {
+    padding: 1.25rem;
+    width: 100%;
+}
+
+.continent-list {
+    padding: 1.25rem;
+    margin-top: 5px;
+    position: absolute;
+    background-color: var(--white);
+    width: 100%;
+}
+
+.continent-list li {
+    padding: 0.4rem;
+    list-style: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.flag-container {
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#country-info {
+    padding: 20px;
+    display: block;
+    
+}
+
+#country-info span {
+    font-weight: 600;
+}
+
+.flag img{
+    width: 100%;
+    height: auto;
+}
