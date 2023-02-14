@@ -15,7 +15,7 @@ fetch('https://restcountries.com/v2/all')
         data.map((country) => {
             document.getElementById('flag-container').innerHTML += `
         
-                <div class="flag-container box-styles">
+                <div class="country-container box-styles">
 
                     <div class="flag">
                     <img src="${country.flag}" alt="" srcset="">

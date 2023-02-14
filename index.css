@@ -7,12 +7,14 @@
     --white: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements) */
   }
 
-  /* //helper class */
+  /* //helper classes */
 
   .box-styles {
     box-shadow: 0 2px 4px 0 rgba(179, 178, 178, 0.2), 0 3px 10px 0 rgba(179, 178, 178, 0.2);
     border-radius: 5px;
   }
+
+   /* //helper classes */
 
   html, body {
     margin: 0;
@@ -93,7 +95,14 @@ main {
 }
 
 .flag-container {
-    width: 70vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.country-container {
+    width: 300px;
     margin: 0 auto;
     margin-top: 50px;
 }
@@ -109,6 +118,30 @@ main {
 }
 
 .flag img{
-    width: 100%;
-    height: auto;
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+
 }
+
+@media (min-width: 720px) {
+
+  .flag-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+}
+
+@media (min-width: 1000px) {
+
+    .flag-container {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+  }
+
+  @media (min-width: 1250px) {
+
+    .flag-container {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  }
