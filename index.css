@@ -27,6 +27,10 @@ body {
     background-color: var(--veryLightGrey);
 }
 
+header {
+    box-shadow: 0 2px 4px 0 rgba(179, 178, 178, 0.2), 0 3px 10px 0 rgba(179, 178, 178, 0.2);
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -34,12 +38,11 @@ nav {
     color: var(--veryDarkBlueTxt);
     padding: 0 10px;
     background-color: var(--white);
-    
 }
 
 nav .dark-light-mode {
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 
@@ -49,7 +52,7 @@ nav .where-in-the-world {
 }
 
 main {
-    margin: 0  10px;
+    margin: 0 20px;
 }
 
 .search-box {
@@ -57,11 +60,17 @@ main {
     padding: 25px 20px;
     background-color: var(--white);
     cursor: pointer;
+    color: var(--darkGrey);
 }
 
 .search-box > input {
     border-style: none;
     cursor: pointer;
+    color: inherit;
+}
+
+input:focus {
+    outline: none;
 }
 
 .filter-by-region {
@@ -125,6 +134,30 @@ main {
 }
 
 @media (min-width: 720px) {
+
+    nav {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    nav .dark-light-mode {
+        font-size: 1.1rem;
+    }
+
+    .search-filter-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .search-box {
+        width: 500px;
+    }
+
+    .filter-btn {
+        width: 150px;
+    }
 
   .flag-container {
     grid-template-columns: 1fr 1fr;

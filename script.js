@@ -6,11 +6,14 @@ filterBtn.addEventListener('click', () => {
 
 })
 
+
+let countriesData   
+
 fetch('https://restcountries.com/v2/all')
     .then(res => res.json())
     .then(data => {
         
-        // console.log(data)
+        countriesData = data
 
         data.map((country) => {
             document.getElementById('flag-container').innerHTML += `
@@ -34,6 +37,36 @@ fetch('https://restcountries.com/v2/all')
         })
 
         
-    
     })
 
+    
+        function searchFilterCountry () {
+
+            const searchBox = document.getElementById('search-box')
+            document.getElementById('flag-container').innerHTML = ''
+
+            countriesData.map((country) => {
+                if(country.name.toLowerCase().includes(searchBox.value.toLowerCase())) {
+                    document.getElementById('flag-container').innerHTML += `
+        
+                <div class="country-container box-styles">
+
+                    <div class="flag">
+                    <img src="${country.flag}" alt="" srcset="">
+                    </div>
+
+                    <span id="country-info">
+                        <h2 class="country-name"><span>${country.name}<span></h2>
+                        <p class="population"><span>Population:</span> ${country.population}</p>
+                        <p class="region"><span>Region:</span> ${country.area}</p>
+                        <p class="capital"><span>Capital:</span> ${country.capital}</p>
+                    </span>
+
+                </div>
+
+        `
+                }
+            })
+    }
+
+    

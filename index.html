@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="./index.css">
 
     <title>Rest Countries API</title>
@@ -16,21 +17,27 @@
 <body>
     <div class="container">
 
-        <nav class="box-styles">
-            <h4 class="where-in-the-world">Where in the World?</h4>
-            <h6 class="dark-light-mode">Dark Mode</h6>
-        </nav>
+        <header>
+
+            <nav>
+                <h4 class="where-in-the-world">Where in the World?</h4>
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+                <h6 class="dark-light-mode">
+                    Dark Mode</h6>
+            </nav>
+
+        </header>
 
         <main>
             <div class="search-filter-container">
 
                 <div class="search-box box-styles">
-                    <input type="text" value="Search for  country..." name="search-box" id="search-box">
+                    <input type="text"  onKeyUp="return searchFilterCountry()" value="Search for  country..." name="search-box" id="search-box">
                 </div>
 
                 <div class="filter-by-region">
                     <div class="filter-btn box-styles" id="filter-btn">Filter by Region</div>
-                    <ul class="continent-list box-styles" id="continent-list">
+                    <ul class="continent-list box-styles hidden" id="continent-list">
                         <li>Africa</li>
                         <li>America</li>
                         <li>Asia</li>
