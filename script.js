@@ -69,7 +69,7 @@ function renderHTML(country) {
 
     return document.getElementById('flag-container').innerHTML += `
     
-    <div class="country-container" id="${country.alpha3Code}" onClick="getCountry(${country.alpha3Code})" box-styles">
+    <div class="country-container  box-styles" id="${country.alpha3Code}" onClick="getCountry(${country.alpha3Code})">
 
         <div class="flag">
         <img src="${country.flag}" alt="" srcset="">
@@ -93,7 +93,7 @@ function renderHTML(country) {
 let singleCountryData
 
 const getCountry = (alpha) => {
-    // console.log(name.id)
+    
     fetch(`https://restcountries.com/v2/alpha/${alpha.id}`)
         .then(res => res.json())
         .then(data => {
