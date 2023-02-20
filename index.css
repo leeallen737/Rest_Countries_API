@@ -150,14 +150,21 @@ input:focus {
         justify-content: space-between;
         max-width: 1395px;
         margin: 0 auto;
+        align-items: center;
     }
 
     .search-box {
         width: 500px;
+        padding: 18px;
     }
 
     .filter-btn {
         width: 150px;
+        height: 15px;
+    }
+
+    .search-box > input {
+        height: 15px;
     }
 
   .flag-container {
