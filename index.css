@@ -114,6 +114,7 @@ input:focus {
     width: 300px;
     margin: 0 auto;
     margin-top: 50px;
+    cursor: pointer;
 }
 
 #country-info {
@@ -136,7 +137,7 @@ input:focus {
 @media (min-width: 720px) {
 
     nav {
-        max-width: 1440px;
+        max-width: 1395px;
         margin: 0 auto;
     }
 
@@ -147,7 +148,7 @@ input:focus {
     .search-filter-container {
         display: flex;
         justify-content: space-between;
-        max-width: 1440px;
+        max-width: 1395px;
         margin: 0 auto;
     }
 
