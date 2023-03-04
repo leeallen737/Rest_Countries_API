@@ -1,3 +1,5 @@
+
+
 const filterBtn = document.getElementById('filter-btn')
 
 filterBtn.addEventListener('click', () => {
@@ -90,18 +92,18 @@ function renderHTML(country) {
 
 // Data for single country page
 
-let singleCountryData
 
-const getCountry = (alpha) => {
-    
-    fetch(`https://restcountries.com/v2/alpha/${alpha.id}`)
-        .then(res => res.json())
-        .then(data => {
-            
-            singleCountryData = data
-            console.log(singleCountryData)
 
-        }
-        )
+// getCountry('bel')
 
-}
+
+// const countryFlag = document.getElementById('country-flag')
+
+
+
+// console.log(singleCountryData)
+
+// flag.innerHTML = `
+// <p>hello</p>
+// // <img src="${singleCountryData.flags.svg}" class="flag" id="flag"/>
+// `
