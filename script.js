@@ -30,6 +30,7 @@ fetch('https://restcountries.com/v2/all')
 function searchFilterCountry() {
 
     const searchBox = document.getElementById('search-box')
+    
     document.getElementById('flag-container').innerHTML = ''
 
     countriesData.map((country) => {
@@ -90,20 +91,3 @@ function renderHTML(country) {
 
 }
 
-// Data for single country page
-
-
-
-// getCountry('bel')
-
-
-// const countryFlag = document.getElementById('country-flag')
-
-
-
-
-
-// flag.innerHTML = `
-// <p>hello</p>
-// // <img src="${singleCountryData.flags.svg}" class="flag" id="flag"/>
-// `

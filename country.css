@@ -8,11 +8,17 @@
     font-size: 1.1rem;
     cursor: pointer;
 }
+
+a { 
+    color: inherit;
+    text-decoration: none;
+} 
+
 .section-2 {
-    margin-top: 60px;
+    margin-top: 68px;
 }
 
-.country{
+.country {
     margin: 0 auto;
     padding-bottom: 600px;
     max-width: 85vw;
@@ -32,7 +38,7 @@
     margin-top: 20px;
 }
 
-.info > * {
+.info>* {
     display: inline;
 }
 
@@ -40,7 +46,7 @@
     display: flex;
 }
 
-.border-countries > p {
+.border-countries>p {
     height: 30px;
     width: 130px;
     display: flex;
@@ -48,4 +54,65 @@
     align-items: center;
     margin-right: 7px;
     cursor: pointer;
+}
+
+@media(min-width: 720px) {
+
+    body {
+        height: 100vh;
+        overflow-y: hidden;
+    }
+
+    main.country {
+        margin: auto;
+    }
+
+    .country {
+        overflow: hidden;
+    }
+
+    .country-flag-img {
+        margin: auto;
+        min-height: 300px;
+    }
+
+    .country-flag {
+        display: flex;
+    }
+
+    .section-wrapper {
+        margin: auto;
+    }
+
+    .info-wrapper {
+        display: flex;
+        width: 50vw;
+    }
+
+    .section-1,
+    .section-2,
+    .section-3 {
+        margin-left: 70px
+    }
+
+    .section-3 {
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .section-3>h3 {
+        width: 200px;
+    }
+
+    .section-1 *,  .section-2 *, .section-3 *{
+        margin: 6px 0;
+    }
+
+    .section-2 {
+        margin-top: 35px;
+    }
+
+    .section-3 {
+        margin-top: 50px;
+    }
 }
