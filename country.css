@@ -35,3 +35,17 @@
 .info > * {
     display: inline;
 }
+
+.border-countries {
+    display: flex;
+}
+
+.border-countries > p {
+    height: 30px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+    cursor: pointer;
+}

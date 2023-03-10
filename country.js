@@ -8,7 +8,6 @@ const getCountry = (alpha) => {
         .then(res => res.json())
         .then(data => {
             singleCountryData = data
-            console.log(data.currencies[0].name)
 
             countryFlag.innerHTML =
 
@@ -69,7 +68,7 @@ const getCountry = (alpha) => {
                 
                     <h3>Border Countries:</h3>
 
-                    <div class="border-countries id="border-countries"></div>
+                    <div class="border-countries" id="border-countries"></div>
                 
                 </section>
                 
@@ -108,23 +107,28 @@ const getCountry = (alpha) => {
             languagesText = languagesText.slice(0, languagesText.length - 2);
             languages.textContent = languagesText
 
-            let borderCountries = ""
+            let borderingCountry = document.getElementById('border-countries')
+            
+            singleCountryData.borders.forEach(borderCountry => {
 
-            singleCountryData.borders.forEach(borderingCountry => {
-
-                borderCountryArr.push(borderingCountry)
+                fetch(`https://restcountries.com/v2/alpha/${borderCountry}`)
+                .then(res => res.json())
+                .then(data => {
+                    
+                    borderingCountry.innerHTML += `<p class="box-styles">${data.name}</p>`
+                })
             })
 
-            console.log(borderCountryArr)
+            
         }
         )
 
 }
 
-let borderCountryArr = []
+
 
 getCountry('LUX')
-console.log(borderCountryArr)
+
 
 
 export default getCountry

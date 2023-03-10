@@ -11,7 +11,7 @@
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./country.css">
-    <script defer type="module" src="./country.js"></script>
+    
     <title>Rest Countries API</title>
 
 </head>
@@ -31,11 +31,13 @@
 
         <main class="country">
             
-           <div class="back-btn box-styles">Back</div>
-            <div class="country-flag" id="country-flag"></div>
+           <a href="#" onclick="history.go(-1)"><div class="back-btn box-styles">Back</div></a>
+            <div class="country-flag" id="country-flag">
+                
+            </div>
         </main>
 
     </div>
-    
+    <script type="module" src="./country.js"></script>
 </body>
 </html>

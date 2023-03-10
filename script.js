@@ -9,7 +9,7 @@ filterBtn.addEventListener('click', () => {
 })
 
 
-let countriesData
+let countriesData = ''
 
 fetch('https://restcountries.com/v2/all')
     .then(res => res.json())
@@ -21,7 +21,7 @@ fetch('https://restcountries.com/v2/all')
             renderHTML(country)
         })
 
-
+        
     })
 
 
@@ -101,7 +101,7 @@ function renderHTML(country) {
 
 
 
-// console.log(singleCountryData)
+
 
 // flag.innerHTML = `
 // <p>hello</p>
