@@ -1,6 +1,11 @@
 
 
 const filterBtn = document.getElementById('filter-btn')
+const header = document.getElementById('header')
+const darkLightModeBtn = document.getElementById('dark-light-mode')
+const continentList = document.getElementById('continent-list')
+
+let darkModeHtml = false
 
 filterBtn.addEventListener('click', () => {
 
@@ -27,9 +32,13 @@ fetch('https://restcountries.com/v2/all')
 
 // Use Search Filter Function
 
+const searchBox = document.getElementById('search-box')
+searchBox.addEventListener('click', function() {
+    searchBox.value = ''
+})
+
 function searchFilterCountry() {
 
-    const searchBox = document.getElementById('search-box')
     
     document.getElementById('flag-container').innerHTML = ''
 
@@ -67,12 +76,14 @@ function filterByRegion(selectedContinent) {
     })
     
 }
-
+let countryContainer = ''
 function renderHTML(country) {
 
-    return document.getElementById('flag-container').innerHTML += `
     
-    <div class="country-container  box-styles" id="${country.alpha3Code}" onClick="getCountry(${country.alpha3Code})">
+    countryContainer = document.getElementById('country-container')
+    document.getElementById('flag-container').innerHTML += `
+    
+    <div class="country-container box-styles ${darkModeHtml ? 'dark-mode-elements':''}" id="${country.alpha3Code}" onClick="getCountry(${country.alpha3Code})">
 
         <div class="flag">
         <img src="${country.flag}" alt="" srcset="">
@@ -88,6 +99,28 @@ function renderHTML(country) {
     </div>
 
 `
+setTimeout(function() {
+    searchBox.value = "Search for  country..."
+}, 10000)
 
 }
 
+
+const body = document.getElementById('body')
+
+function darkMode() {
+    
+    darkModeHtml = !darkModeHtml
+    darkModeHtml ? darkLightModeBtn.textContent = 'Light Mode' : darkLightModeBtn.textContent = 'Dark Mode'
+    console.log(darkModeHtml)
+
+    filterBtn.classList.toggle('dark-mode-elements')
+    searchBox.classList.toggle('dark-mode-elements')
+    body.classList.toggle('dark-mode-body')
+    header.classList.toggle('dark-mode-elements')
+    continentList.classList.toggle('dark-mode-elements')
+}
+
+
+
+darkLightModeBtn.addEventListener('click', darkMode)
