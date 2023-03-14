@@ -5,7 +5,7 @@ const header = document.getElementById('header')
 const darkLightModeBtn = document.getElementById('dark-light-mode')
 const continentList = document.getElementById('continent-list')
 
-let darkModeHtml = false
+
 
 filterBtn.addEventListener('click', () => {
 
@@ -74,7 +74,6 @@ function filterByRegion(selectedContinent) {
         }
         
     })
-    
 }
 let countryContainer = ''
 function renderHTML(country) {
@@ -83,13 +82,13 @@ function renderHTML(country) {
     countryContainer = document.getElementById('country-container')
     document.getElementById('flag-container').innerHTML += `
     
-    <div class="country-container box-styles ${darkModeHtml ? 'dark-mode-elements':''}" id="${country.alpha3Code}" onClick="getCountry(${country.alpha3Code})">
+    <div class="country-container box-styles" id="${country.alpha3Code}" onClick="getCountry(${country.alpha3Code})">
 
         <div class="flag">
         <img src="${country.flag}" alt="" srcset="">
         </div>
 
-        <span id="country-info">
+        <span class="country-info">
             <h2 class="country-name"><span>${country.name}<span></h2>
             <p class="population"><span>Population:</span> ${country.population}</p>
             <p class="region"><span>Region:</span> ${country.region}</p>
@@ -99,28 +98,5 @@ function renderHTML(country) {
     </div>
 
 `
-setTimeout(function() {
-    searchBox.value = "Search for  country..."
-}, 10000)
 
 }
-
-
-const body = document.getElementById('body')
-
-function darkMode() {
-    
-    darkModeHtml = !darkModeHtml
-    darkModeHtml ? darkLightModeBtn.textContent = 'Light Mode' : darkLightModeBtn.textContent = 'Dark Mode'
-    console.log(darkModeHtml)
-
-    filterBtn.classList.toggle('dark-mode-elements')
-    searchBox.classList.toggle('dark-mode-elements')
-    body.classList.toggle('dark-mode-body')
-    header.classList.toggle('dark-mode-elements')
-    continentList.classList.toggle('dark-mode-elements')
-}
-
-
-
-darkLightModeBtn.addEventListener('click', darkMode)
