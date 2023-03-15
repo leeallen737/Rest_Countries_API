@@ -5,7 +5,7 @@ const header = document.getElementById('header')
 const darkLightModeBtn = document.getElementById('dark-light-mode')
 const continentList = document.getElementById('continent-list')
 
-
+let darkModeOn = false
 
 filterBtn.addEventListener('click', () => {
 
@@ -98,5 +98,49 @@ function renderHTML(country) {
     </div>
 
 `
+ifDarkModeOn(country.alpha3Code)
+}
 
+darkLightModeBtn.addEventListener('click', darkMode)
+
+function darkMode() {
+    darkModeOn = !darkModeOn
+
+
+    let flagContainer = document.getElementById('flag-container')
+    const newFlagContainer = Array.from(flagContainer.children)
+
+    newFlagContainer.map(function(country) {
+    if(darkModeOn) {
+
+        if(country.id) {
+            document.getElementById(country.id).classList.add('dark-mode-elements')
+        }
+        
+    }
+
+    if(darkModeOn === false) {
+        if(country.id) {
+            document.getElementById(country.id).classList.remove('dark-mode-elements')
+        }
+    }
+})
+}
+
+function ifDarkModeOn(alpha) {
+    if(darkModeOn) {
+        
+        if(alpha) {
+            document.getElementById(alpha).classList.add('dark-mode-elements')
+        }
+        
+    }
+
+    if(!darkModeOn) {
+        if(alpha) {
+            document.getElementById(alpha).classList.remove('dark-mode-elements')
+        }
+    }
+    
+    
 }
