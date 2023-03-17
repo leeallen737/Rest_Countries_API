@@ -26,6 +26,7 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
     background-color: var(--veryLightGrey);
+    color: var(--veryDarkBlueTxt);
 }
 
 header {
@@ -54,6 +55,19 @@ nav .where-in-the-world {
     font-size: 1.2rem;
 }
 
+.loading{
+    position: absolute;
+    left: 0; 
+    right: 0;
+    top: 0; 
+    bottom: 0;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: auto; 
+    margin-bottom: auto;
+    background-color: transparent;
+}
+
 main {
     margin: 0 20px;
 }
@@ -69,7 +83,6 @@ main {
 .search-box > input {
     border-style: none;
     cursor: pointer;
-    color: inherit;
 }
 
 input:focus {
@@ -94,7 +107,7 @@ input:focus {
     margin-top: 5px;
     position: absolute;
     background-color: var(--white);
-    width: 100%;
+    width: 79%;
 }
 
 .continent-list li {
@@ -142,13 +155,41 @@ input:focus {
 
 .dark-mode-body {
     background-color: var(--veryDarkBlue);
+    transition: background-color 1s;
   }
 
 .dark-mode-elements {
     color: white;
     background-color: var(--darkBlue);
     box-shadow: 0 2px 4px 0 #1d2a33;
+    transition: background-color 1s, color 1s, box-shadow 1s;
   }
+
+.dark-mode-noShadow {
+    color: white;
+    background-color: var(--darkBlue);
+    transition: background-color 1s, color 1s;
+}
+
+  /* Light Mode */
+
+.light-mode-body {
+    background-color: var(--white);
+    transition: background-color 1s;
+  }
+
+.light-mode-elements {
+    color: var(--veryDarkBlueTxt);
+    background-color: var(--white);
+    box-shadow: 0 2px 4px 0 rgba(179, 178, 178, 0.2), 0 3px 10px 0 rgba(179, 178, 178, 0.2);
+    transition: background-color 1s, color 1s, box-shadow 1s;
+  }
+
+.light-mode-noShadow {
+    color: var(--veryDarkBlueTxt);
+    background-color: var(--white);
+    transition: background-color 1s, color 1s;
+}
 
 @media (min-width: 720px) {
 

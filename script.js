@@ -1,5 +1,5 @@
 
-
+const body = document.getElementById('body')
 const filterBtn = document.getElementById('filter-btn')
 const header = document.getElementById('header')
 const darkLightModeBtn = document.getElementById('dark-light-mode')
@@ -76,6 +76,11 @@ function filterByRegion(selectedContinent) {
     })
 }
 let countryContainer = ''
+
+// function loading (){
+//     document.getElementById('flag-container').innerHTML += `<div class="loading" id="loading"><img src="./assets/loading.gif" alt="" srcset=""></div>`
+// }
+
 function renderHTML(country) {
 
     
@@ -114,14 +119,14 @@ function darkMode() {
     if(darkModeOn) {
 
         if(country.id) {
-            document.getElementById(country.id).classList.add('dark-mode-elements')
+            addDarkElements(country.id)
         }
         
     }
 
     if(darkModeOn === false) {
         if(country.id) {
-            document.getElementById(country.id).classList.remove('dark-mode-elements')
+            removeDarkElements(country.id)
         }
     }
 })
@@ -131,16 +136,54 @@ function ifDarkModeOn(alpha) {
     if(darkModeOn) {
         
         if(alpha) {
-            document.getElementById(alpha).classList.add('dark-mode-elements')
+            addDarkElements(alpha)
         }
         
     }
 
     if(!darkModeOn) {
         if(alpha) {
-            document.getElementById(alpha).classList.remove('dark-mode-elements')
+            removeDarkElements(alpha)
         }
     }
     
     
+}
+
+const searchBoxOuter = document.getElementById('search-box-outer')
+
+function addDarkElements(code) {
+    document.getElementById(code).classList.add('dark-mode-elements')
+    filterBtn.classList.add('dark-mode-elements')
+    searchBox.classList.add('dark-mode-noShadow')
+    searchBoxOuter.classList.add('dark-mode-elements')
+    body.classList.add('dark-mode-body')
+    header.classList.add('dark-mode-elements')
+    continentList.classList.add('dark-mode-elements')
+
+    document.getElementById(code).classList.remove('light-mode-elements')
+    filterBtn.classList.remove('light-mode-elements')
+    searchBox.classList.remove('light-mode-noShadow')
+    searchBoxOuter.classList.remove('light-mode-elements')
+    body.classList.remove('light-mode-body')
+    header.classList.remove('light-mode-elements')
+    continentList.classList.remove('light-mode-elements')
+}
+
+function removeDarkElements(code) {
+    document.getElementById(code).classList.add('light-mode-elements')
+    filterBtn.classList.add('light-mode-elements')
+    searchBox.classList.add('light-mode-noShadow')
+    searchBoxOuter.classList.add('light-mode-elements')
+    body.classList.add('light-mode-body')
+    header.classList.add('light-mode-elements')
+    continentList.classList.add('light-mode-elements')
+
+    document.getElementById(code).classList.remove('dark-mode-elements')
+    filterBtn.classList.remove('dark-mode-elements')
+    searchBox.classList.remove('dark-mode-noShadow')
+    searchBoxOuter.classList.remove('dark-mode-elements')
+    body.classList.remove('dark-mode-body')
+    header.classList.remove('dark-mode-elements')
+    continentList.classList.remove('dark-mode-elements')
 }
