@@ -5,7 +5,7 @@ const header = document.getElementById('header')
 const darkLightModeBtn = document.getElementById('dark-light-mode')
 const continentList = document.getElementById('continent-list')
 
-let darkModeOn = false
+let darkModeOn = true
 
 filterBtn.addEventListener('click', () => {
 
@@ -63,7 +63,7 @@ newArray.forEach(function(el) {
 })
 
 function filterByRegion(selectedContinent) {
-  
+
     document.getElementById('flag-container').innerHTML = ''
 
     countriesData.map((country) => {
@@ -74,12 +74,26 @@ function filterByRegion(selectedContinent) {
         }
         
     })
+    loading(10000)
 }
 let countryContainer = ''
 
-// function loading (){
-//     document.getElementById('flag-container').innerHTML += `<div class="loading" id="loading"><img src="./assets/loading.gif" alt="" srcset=""></div>`
-// }
+function loading(delay) {
+
+    if(darkModeOn) {
+        document.getElementById('loading').classList.add('light-img')
+        document.getElementById('loading').classList.remove('dark-img')
+    }else {
+        document.getElementById('loading').classList.add('dark-img')
+        document.getElementById('loading').classList.remove('light-img')
+    }
+     
+    setTimeout(function() {
+        document.getElementById('loading').style.display = "none"
+    }, delay)
+}
+
+loading(10000)
 
 function renderHTML(country) {
 
