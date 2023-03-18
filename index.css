@@ -64,11 +64,10 @@ nav .where-in-the-world {
     bottom: 0;
     margin-left: auto; 
     margin-right: auto;
-    margin-top: 7px; 
+    margin-top: auto; 
     margin-bottom: auto;
     width: 5rem;
     height: 5rem;
-    color: #1d2a33;
 }
 
 main {
@@ -179,6 +178,9 @@ input:focus {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--darkBlue);
 }
 
 .dark-img {
@@ -186,6 +188,9 @@ input:focus {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--white);
 }
 
   /* Light Mode */
@@ -209,6 +214,22 @@ input:focus {
 }
 
 @media (min-width: 720px) {
+
+    .loading {
+        margin-top: 7px;
+    }
+
+    .light-img, .dark-img {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    /* .dark-img {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    } */
 
     nav {
         max-width: 1395px;
