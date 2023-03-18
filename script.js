@@ -128,10 +128,10 @@ function darkMode() {
 
     let flagContainer = document.getElementById('flag-container')
     const newFlagContainer = Array.from(flagContainer.children)
-
+    
     newFlagContainer.map(function(country) {
     if(darkModeOn) {
-
+        darkLightModeBtn.textContent = 'Light Mode'
         if(country.id) {
             addDarkElements(country.id)
         }
@@ -139,6 +139,7 @@ function darkMode() {
     }
 
     if(darkModeOn === false) {
+        darkLightModeBtn.textContent = 'Dark Mode'
         if(country.id) {
             removeDarkElements(country.id)
         }
@@ -148,7 +149,7 @@ function darkMode() {
 
 function ifDarkModeOn(alpha) {
     if(darkModeOn) {
-        
+        darkLightModeBtn.textContent = 'Light Mode'
         if(alpha) {
             addDarkElements(alpha)
         }
@@ -156,6 +157,7 @@ function ifDarkModeOn(alpha) {
     }
 
     if(!darkModeOn) {
+        darkLightModeBtn.textContent = 'Dark Mode'
         if(alpha) {
             removeDarkElements(alpha)
         }
