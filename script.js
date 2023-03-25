@@ -1,11 +1,19 @@
 
+
 const body = document.getElementById('body')
 const filterBtn = document.getElementById('filter-btn')
 const header = document.getElementById('header')
 const darkLightModeBtn = document.getElementById('dark-light-mode')
 const continentList = document.getElementById('continent-list')
-
+// 
 let darkModeOn = true
+
+let countryAlpha = ''
+
+function openCountryPage(alpha) {
+    console.log(alpha.id)
+    window.open("country.html")
+}
 
 filterBtn.addEventListener('click', () => {
 
@@ -26,20 +34,20 @@ fetch('https://restcountries.com/v2/all')
             renderHTML(country)
         })
 
-        
+
     })
 
 
 // Use Search Filter Function
 
 const searchBox = document.getElementById('search-box')
-searchBox.addEventListener('click', function() {
+searchBox.addEventListener('click', function () {
     searchBox.value = ''
 })
 
 function searchFilterCountry() {
 
-    
+
     document.getElementById('flag-container').innerHTML = ''
 
     countriesData.map((country) => {
@@ -56,7 +64,7 @@ let contList = document.getElementById('continent-list')
 
 const newArray = Array.from(contList.children)
 
-newArray.forEach(function(el) {
+newArray.forEach(function (el) {
     el.addEventListener('click', (e) => {
         filterByRegion(e.target.textContent)
     })
@@ -67,12 +75,12 @@ function filterByRegion(selectedContinent) {
     document.getElementById('flag-container').innerHTML = ''
 
     countriesData.map((country) => {
-        
+
         if (country.region.includes(selectedContinent)) {
             renderHTML(country)
-                
+
         }
-        
+
     })
     loading(10000)
 }
@@ -80,15 +88,15 @@ let countryContainer = ''
 
 function loading(delay) {
 
-    if(darkModeOn) {
+    if (darkModeOn) {
         document.getElementById('loading').classList.add('light-img')
         document.getElementById('loading').classList.remove('dark-img')
-    }else {
+    } else {
         document.getElementById('loading').classList.add('dark-img')
         document.getElementById('loading').classList.remove('light-img')
     }
-     
-    setTimeout(function() {
+
+    setTimeout(function () {
         document.getElementById('loading').style.display = "none"
     }, delay)
 }
@@ -97,11 +105,11 @@ loading(10000)
 
 function renderHTML(country) {
 
-    
+
     countryContainer = document.getElementById('country-container')
     document.getElementById('flag-container').innerHTML += `
     
-    <div class="country-container box-styles" id="${country.alpha3Code}" onClick="getCountry(${country.alpha3Code})">
+    <div class="country-container box-styles" id="${country.alpha3Code}" onClick="openCountryPage(${country.alpha3Code})">
 
         <div class="flag">
         <img src="${country.flag}" alt="" srcset="">
@@ -117,7 +125,7 @@ function renderHTML(country) {
     </div>
 
 `
-ifDarkModeOn(country.alpha3Code)
+    ifDarkModeOn(country.alpha3Code)
 }
 
 darkLightModeBtn.addEventListener('click', darkMode)
@@ -128,42 +136,42 @@ function darkMode() {
 
     let flagContainer = document.getElementById('flag-container')
     const newFlagContainer = Array.from(flagContainer.children)
-    
-    newFlagContainer.map(function(country) {
-    if(darkModeOn) {
-        darkLightModeBtn.textContent = 'Light Mode'
-        if(country.id) {
-            addDarkElements(country.id)
-        }
-        
-    }
 
-    if(darkModeOn === false) {
-        darkLightModeBtn.textContent = 'Dark Mode'
-        if(country.id) {
-            removeDarkElements(country.id)
+    newFlagContainer.map(function (country) {
+        if (darkModeOn) {
+            darkLightModeBtn.textContent = 'Light Mode'
+            if (country.id) {
+                addDarkElements(country.id)
+            }
+
         }
-    }
-})
+
+        if (darkModeOn === false) {
+            darkLightModeBtn.textContent = 'Dark Mode'
+            if (country.id) {
+                removeDarkElements(country.id)
+            }
+        }
+    })
 }
 
 function ifDarkModeOn(alpha) {
-    if(darkModeOn) {
+    if (darkModeOn) {
         darkLightModeBtn.textContent = 'Light Mode'
-        if(alpha) {
+        if (alpha) {
             addDarkElements(alpha)
         }
-        
+
     }
 
-    if(!darkModeOn) {
+    if (!darkModeOn) {
         darkLightModeBtn.textContent = 'Dark Mode'
-        if(alpha) {
+        if (alpha) {
             removeDarkElements(alpha)
         }
     }
-    
-    
+
+
 }
 
 const searchBoxOuter = document.getElementById('search-box-outer')

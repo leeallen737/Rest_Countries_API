@@ -1,7 +1,9 @@
+
+
 let singleCountryData
 
 const getCountry = (alpha) => {
-
+    
     const countryFlag = document.getElementById('country-flag')
 
     fetch(`https://restcountries.com/v2/alpha/${alpha}`)
@@ -131,6 +133,3 @@ const getCountry = (alpha) => {
 
 getCountry('LUX')
 
-
-
-export default getCountry
