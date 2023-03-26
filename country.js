@@ -130,6 +130,3 @@ const getCountry = (alpha) => {
 }
 
 
-
-getCountry('LUX')
-

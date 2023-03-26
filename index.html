@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./country.css">
 
     <title>Rest Countries API</title>
 
@@ -28,7 +29,7 @@
 
         </header>
 
-        <main>
+        <main id="countries">
             <div class="search-filter-container">
 
                 <div id="search-box-outer" class="search-box box-styles">
@@ -52,7 +53,16 @@
                 <div  class="loading" id="loading" alt="" srcset=""></div>
             </div>
             
+            
         </main>
+
+        <main class="country hide" id="country">
+            
+            <a href="index.html"><div class="back-btn box-styles" id="back-btn">Back</div></a>
+             <div class="country-flag" id="country-flag">
+                 
+             </div>
+         </main>
 
     </div>
     <script src="./script.js"></script>

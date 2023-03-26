@@ -16,6 +16,10 @@
     background-color: var(--white);
   }
 
+  .hide {
+    display: none;
+  }
+
    /* //helper classes */
 
   html, body {
@@ -158,17 +162,18 @@ input:focus {
 .dark-mode-body {
     background-color: var(--veryDarkBlue);
     transition: background-color 1s;
+    color: var(--white);
   }
 
 .dark-mode-elements {
-    color: white;
+    color: var(--white);
     background-color: var(--darkBlue);
     box-shadow: 0 2px 4px 0 #1d2a33;
     transition: background-color 1s, color 1s, box-shadow 1s;
   }
 
 .dark-mode-noShadow {
-    color: white;
+    color: var(--white);
     background-color: var(--darkBlue);
     transition: background-color 1s, color 1s;
 }
@@ -224,12 +229,6 @@ input:focus {
         padding: 0;
         border-radius: 0;
     }
-
-    /* .dark-img {
-        background-color: transparent;
-        padding: 0;
-        border-radius: 0;
-    } */
 
     nav {
         max-width: 1395px;
