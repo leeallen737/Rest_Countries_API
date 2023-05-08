@@ -5,8 +5,12 @@ const filterBtn = document.getElementById('filter-btn')
 const header = document.getElementById('header')
 const darkLightModeBtn = document.getElementById('dark-light-mode')
 const continentList = document.getElementById('continent-list')
-// 
-let darkModeOn = true
+// // 
+let darkModeOn = '' 
+localStorage.getItem('darkModeOn') == 'true' ? darkModeOn = true : darkModeOn = false
+console.log(localStorage.getItem('darkModeOn'), 'storage')
+console.log(darkModeOn, 'boolean')
+
 
 let countryAlpha = ''
 
@@ -134,6 +138,11 @@ darkLightModeBtn.addEventListener('click', darkMode)
 function darkMode() {
     darkModeOn = !darkModeOn
 
+    if(darkModeOn) {
+        localStorage.setItem('darkModeOn', true)
+    }else {
+        localStorage.setItem('darkModeOn', false)
+    }
 
     let flagContainer = document.getElementById('flag-container')
     const newFlagContainer = Array.from(flagContainer.children)
